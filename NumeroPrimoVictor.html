@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <script>
+        function NumeroPrimo() {
+            var numero = document.getElementById("numero1").value;
+            var text;
+            var total = 0;
+            if (numero==1)
+            {
+                text = "O número " + numero + " é primo";
+                document.getElementById("text").innerHTML = text;
+                return true;
+            }
+
+            else if (numero > 1) {
+                var y = 0;
+                for (y = 1; y <= numero; y++) {
+                    if (numero % y == 0) total++;
+                }
+                if (total == 2) {
+                    text = "O número " + numero + " é primo";
+                    document.getElementById("text").innerHTML = text;
+                    return true;
+                }
+                if (total > 2) {
+                    text = "O número " + numero + " não é primo";
+                    document.getElementById("text").innerHTML = text;
+                    return false;
+                }
+            }
+        } 
+        //Victor Stutz
+    </script>
+</head>
+
+<body>
+    <h3 id="text"></h3>
+    <input type="number" id="numero1" />
+    <button onclick="javascript:NumeroPrimo()"> Execut </button>
+</body>
+
+</html>

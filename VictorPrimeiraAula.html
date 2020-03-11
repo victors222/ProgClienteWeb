@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function fibonacci() {
+
+			var n = document.getElementById("numero").value;
+			if (n==1 || n==2)
+			{
+				var resposta = "O valor do Fibonacci é: 1" ;
+				document.getElementById("result").innerHTML = resposta;
+				return 1;
+			}
+		var elem1=1, elem2=1, elem3=0;
+			 	for (i=3; i<=n;i++) {
+			 		elem3= elem2 + elem1;
+			 		elem1=elem2;
+			 		elem2=elem3;
+			 	}
+			var resposta = "O valor do Fibonacci para" + n + "é: " + elem3;
+			document.getElementById("result").innerHTML = resposta;
+			return elem3;
+			} 
+	</script>
+</head>
+<body>
+		<h1 id="result"> </h1>
+		<input type="number" id="numero"/>
+		<button onclick="javascript:fibonacci()">Executar</button>
+</body>
+</html>
